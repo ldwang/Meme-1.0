@@ -134,7 +134,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""
         }
-        //topTextField.clearsOnBeginEditing = false
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
