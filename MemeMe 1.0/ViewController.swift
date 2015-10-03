@@ -31,6 +31,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    //Define text field attributes with white color and black background
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -40,17 +41,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Setup default Top Text field properties
+        
         topTextField.text = "TOP"
-        topTextField.textAlignment = .Center
         topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.textAlignment = .Center
         self.topTextField.delegate = self
-        //topTextField.clearsOnBeginEditing = true
         topTextField.tag = 0
         
+        // Setup default Bottom Text field properties
         bottomTextField.text = "BOTTOM"
-        bottomTextField.textAlignment = .Center
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.textAlignment = .Center
         self.bottomTextField.delegate = self
         //bottomTextField.clearsOnBeginEditing = true
         bottomTextField.tag = 1
@@ -60,8 +62,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         self.subscribeToKeyboardNotifications()
         
+        //Disable camera button if it's not supported
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
+        //Disable share button if the image is not chosen
         if imagePickerView.image == nil {
          shareButton.enabled = false
         } else {
@@ -182,14 +186,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //TODO: Add to memes array in AppDelegate
         
-        
     }
     
     func generateMemedImage() -> UIImage {
-        //TODO: Hide toolbar and navbar
+        //Hide toolbar and navbar
         self.tooBar.hidden = true
         self.navigationBar.hidden = true
-        //UIApplication.sharedApplication().statusBarHidden = true
+        UIApplication.sharedApplication().statusBarHidden = true
         
         //render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -197,10 +200,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        //TODO: Show toolbar and navbar
+        //Show toolbar and navbar
         self.tooBar.hidden = false
         self.navigationBar.hidden = false
-        //UIApplication.sharedApplication().statusBarHidden = false
+        UIApplication.sharedApplication().statusBarHidden = false
         
         return memedImage
     }

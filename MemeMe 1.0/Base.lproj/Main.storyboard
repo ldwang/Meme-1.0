@@ -18,25 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xtm-ws-3jA">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Wq-rt-Tk7" userLabel="Top Text Field">
-                                <rect key="frame" x="32" y="90" width="536" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="tzF-xB-KEk"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCF-cY-YJS" userLabel="Bottom Text Field">
                                 <rect key="frame" x="32" y="492" width="536" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Uex-84-hti"/>
+                                    <constraint firstAttribute="height" constant="35" id="bYd-iu-yVf"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-o6-vdB">
@@ -69,6 +60,15 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="T9k-L6-N7f"/>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Wq-rt-Tk7" userLabel="Top Text Field">
+                                <rect key="frame" x="32" y="90" width="536" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jtz-A4-krH"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -79,15 +79,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="psO-TH-HHA" secondAttribute="trailing" constant="-20" id="9jW-5v-k3T"/>
                             <constraint firstItem="3Wq-rt-Tk7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="9kl-DX-v8K"/>
                             <constraint firstItem="3Wq-rt-Tk7" firstAttribute="top" secondItem="wtb-o6-vdB" secondAttribute="bottom" constant="26" id="AX7-2i-8xH"/>
-                            <constraint firstItem="psO-TH-HHA" firstAttribute="top" secondItem="UCF-cY-YJS" secondAttribute="bottom" constant="29" id="F00-YD-niU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xtm-ws-3jA" secondAttribute="bottom" id="FFo-3Z-aYu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xtm-ws-3jA" secondAttribute="trailing" constant="-20" id="Fja-yw-8fw"/>
-                            <constraint firstItem="Xtm-ws-3jA" firstAttribute="top" secondItem="wtb-o6-vdB" secondAttribute="bottom" id="HlR-ad-bto"/>
                             <constraint firstItem="Xtm-ws-3jA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="M1E-Re-WVY"/>
                             <constraint firstItem="wtb-o6-vdB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Qu9-0e-hbA"/>
                             <constraint firstItem="psO-TH-HHA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Vjz-4I-Vfb"/>
-                            <constraint firstItem="psO-TH-HHA" firstAttribute="top" secondItem="Xtm-ws-3jA" secondAttribute="bottom" id="ZOD-kI-ECP"/>
                             <constraint firstItem="wtb-o6-vdB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="bTQ-hz-ld2"/>
                             <constraint firstItem="psO-TH-HHA" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="hDc-U6-icI"/>
+                            <constraint firstItem="Xtm-ws-3jA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="myR-f7-Bfq"/>
+                            <constraint firstItem="psO-TH-HHA" firstAttribute="top" secondItem="UCF-cY-YJS" secondAttribute="bottom" constant="29" id="xaV-bd-mOb"/>
                         </constraints>
                     </view>
                     <connections>
