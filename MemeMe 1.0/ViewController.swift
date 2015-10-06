@@ -46,21 +46,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.text = "TOP"
         topTextField.defaultTextAttributes = memeTextAttributes
         topTextField.textAlignment = .Center
-        self.topTextField.delegate = self
+        topTextField.delegate = self
         topTextField.tag = 0
         
         // Setup default Bottom Text field properties
         bottomTextField.text = "BOTTOM"
         bottomTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.textAlignment = .Center
-        self.bottomTextField.delegate = self
+        bottomTextField.delegate = self
         //bottomTextField.clearsOnBeginEditing = true
         bottomTextField.tag = 1
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.subscribeToKeyboardNotifications()
+        subscribeToKeyboardNotifications()
         
         //Disable camera button if it's not supported
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
@@ -76,7 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeToKeyboardNotifications()
+        unsubscribeToKeyboardNotifications()
     }
     
     @IBAction func shareMeme(sender: UIBarButtonItem) {
@@ -93,7 +93,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         
-        self.presentViewController(shareController, animated: true, completion: nil)
+        presentViewController(shareController, animated: true, completion: nil)
     }
    
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
@@ -101,7 +101,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
 
         imagePicker.sourceType = .Camera
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
         
     }
     
@@ -109,7 +109,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .PhotoLibrary
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
         
     }
 
@@ -161,11 +161,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin.y += getKeyboardHeight(notification)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -189,19 +189,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage {
         //Hide toolbar and navbar
-        self.tooBar.hidden = true
-        self.navigationBar.hidden = true
+        tooBar.hidden = true
+        navigationBar.hidden = true
         UIApplication.sharedApplication().statusBarHidden = true
         
         //render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         //Show toolbar and navbar
-        self.tooBar.hidden = false
-        self.navigationBar.hidden = false
+        tooBar.hidden = false
+        navigationBar.hidden = false
         UIApplication.sharedApplication().statusBarHidden = false
         
         return memedImage
